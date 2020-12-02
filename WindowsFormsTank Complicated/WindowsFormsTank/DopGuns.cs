@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace WindowsFormsTank
 {
-    class DopGuns
+    class DopGuns: IDopGun
     {
         //закрытое поле
         private  Enumeration _numberDopGun;

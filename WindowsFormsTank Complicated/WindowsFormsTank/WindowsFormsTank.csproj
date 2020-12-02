@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmoredVehicle.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="DopGuns.cs" />
+    <Compile Include="IDopGun.cs" />
+    <Compile Include="ITransport.cs" />
     <Compile Include="Perechislenie.cs" />
     <Compile Include="FormTank.cs">
       <SubType>Form</SubType>
@@ -58,6 +61,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tank.cs" />
+    <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="FormTank.resx">
       <DependentUpon>FormTank.cs</DependentUpon>
     </EmbeddedResource>

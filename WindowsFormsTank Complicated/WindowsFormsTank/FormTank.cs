@@ -8,43 +8,55 @@ namespace WindowsFormsTank
     public partial class FormTank : Form
     {
 
-        private Tank tank;
+        private ITransport armoredVihicle;
+        //private ArmoredVehicle armoredVehicle;
+
         /// <summary>
         /// Конструктор
         /// </summary>
-        /// 
-
         public FormTank()
         {
             InitializeComponent();
         }
-
         /// <summary>
-        /// Метод отрисовки танка
+        /// Метод отрисовки 
         /// </summary>
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxTank.Width, pictureBoxTank.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            tank.DrawTransport(gr);
+            armoredVihicle.DrawTransport(gr);
             pictureBoxTank.Image = bmp;
         }
-
         /// <summary>
-        /// Обработка нажатия кнопки "Создать"
+        /// Обработка нажатия кнопки "Создать бронированная машина"
         /// </summary>
-
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void buttonCreateArmoredVehicle_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            armoredVihicle = new ArmoredVehicle(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green);
+
+            armoredVihicle.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTank.Width,
+           pictureBoxTank.Height);
+            Draw();
+        }
+        /// <summary>
+        /// Обработка нажатия кнопки "Создать гоночный автомобиль"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonCreateTank_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             int numberDopGun = Convert.ToInt32(comboBoxNumberDopGun.SelectedItem); // получили количество дополнительных пушек из поля
 
-            tank = new Tank(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green,Color.Brown, true, true, true, true,numberDopGun);
-            tank.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTank.Width,
-           pictureBoxTank.Height);
+            armoredVihicle = new Tank(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green, Color.Brown, true, true, true, true, numberDopGun);
+            armoredVihicle.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTank.Width, pictureBoxTank.Height);
             Draw();
+           
+            
         }
         /// <summary>
         /// Обработка нажатия кнопок управления
@@ -58,26 +70,21 @@ namespace WindowsFormsTank
             switch (name)
             {
                 case "buttonUp":
-                    tank.MoveTransport(Direction.Up);
+                    armoredVihicle.MoveTransport(Direction.Up);
                     break;
                 case "buttonDown":
-                    tank.MoveTransport(Direction.Down);
+                    armoredVihicle.MoveTransport(Direction.Down);
                     break;
                 case "buttonLeft":
-                    tank.MoveTransport(Direction.Left);
+                    armoredVihicle.MoveTransport(Direction.Left);
                     break;
                 case "buttonRight":
-                    tank.MoveTransport(Direction.Right);
+                    armoredVihicle.MoveTransport(Direction.Right);
                     break;
             }
             Draw();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
-
-
 }
