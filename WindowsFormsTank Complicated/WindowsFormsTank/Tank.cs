@@ -42,7 +42,7 @@ namespace WindowsFormsTank
         /// <param name="sideShield">Признак наличия боковых щитов</param>
         /// <param name="backShield">Признак наличия заднего щита</param>
 
-        public Tank(int maxSpeed, float weight, Color mainColor, Color dopColor, bool frontShield, bool leftShield, bool rightShield, bool dopWheel, int numberDopGun) :
+        public Tank(int maxSpeed, float weight, Color mainColor, Color dopColor, bool frontShield, bool leftShield, bool rightShield, bool dopWheel, int numberDopGun , int gunsForm) :
             base(maxSpeed, weight, mainColor, 290, 200)
 
         {
@@ -52,6 +52,19 @@ namespace WindowsFormsTank
             RightShield = rightShield;
             DopWheel = dopWheel;
             Guns.SetNumberDopGun = numberDopGun;
+
+            if (gunsForm == 0)
+            {
+                guns = new GunsFirstStyle(_countGuns, dopColor);
+            }
+            else if (gunsForm == 1)
+            {
+                guns = new GunsSecondStyle(_countGuns, dopColor);
+            }
+            else if (gunsForm == 2)
+            {
+                guns = new GunsThirdStyle(_countGuns, dopColor);
+            }
         }
 
 
