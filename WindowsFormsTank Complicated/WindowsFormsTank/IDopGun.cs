@@ -2,7 +2,8 @@
 
 namespace WindowsFormsTank
 {
-    interface IDopGun {
+    public interface IDopGun
+    {
         int SetNumberDopGun
         {
             set;

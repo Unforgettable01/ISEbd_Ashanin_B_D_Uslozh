@@ -29,10 +29,12 @@ namespace WindowsFormsTank
 
         public bool BigGun { private set; get; }
 
-        DopGuns Guns = new DopGuns();
+        // DopGuns Guns = new DopGuns();
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///
+        /// <summary>
+        public int Gun { private set; get; }
 
+        private IDopGun gun;
         /// Конструктор
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес танка</param>
@@ -51,19 +53,19 @@ namespace WindowsFormsTank
             LeftShield = leftShield;
             RightShield = rightShield;
             DopWheel = dopWheel;
-            Guns.SetNumberDopGun = numberDopGun;
+            //Guns.SetNumberDopGun = numberDopGun;
 
             if (gunsForm == 0)
             {
-                guns = new GunsFirstStyle(_countGuns, dopColor);
+                gun = new GunsFirstStyle(numberDopGun, dopColor);
             }
             else if (gunsForm == 1)
             {
-                guns = new GunsSecondStyle(_countGuns, dopColor);
+                gun = new GunsSecondStyle(numberDopGun, dopColor);
             }
             else if (gunsForm == 2)
             {
-                guns = new GunsThirdStyle(_countGuns, dopColor);
+                gun = new GunsThirdStyle(numberDopGun, dopColor);
             }
         }
 
@@ -119,7 +121,7 @@ namespace WindowsFormsTank
                 g.FillEllipse(brGreyWheel, _startPosX + 130, _startPosY + 140, 50, 50); //  №4
                 g.FillEllipse(brGreyWheel, _startPosX + 230, _startPosY + 140, 30, 30); //  №6
             }
-            Guns.DrawDopGun(g, DopColor, _startPosX, _startPosY);
+            gun.DrawDopGun(g, DopColor, _startPosX, _startPosY);
             base.DrawTransport(g);
 
         }

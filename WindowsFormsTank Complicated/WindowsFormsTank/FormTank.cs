@@ -51,12 +51,13 @@ namespace WindowsFormsTank
         {
             Random rnd = new Random();
             int numberDopGun = Convert.ToInt32(comboBoxNumberDopGun.SelectedItem); // получили количество дополнительных пушек из поля
-
-            armoredVihicle = new Tank(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green, Color.Brown, true, true, true, true, numberDopGun);
+            armoredVihicle = new Tank(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green, Color.Brown, true, true, true, true, numberDopGun, FormaOrudiya());
             armoredVihicle.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTank.Width, pictureBoxTank.Height);
+
+            button_GunsFirstStyle.Enabled = true;
+            button_GunsSecondStyle.Enabled = true;
+            button_GunsThirdStyle.Enabled = true;
             Draw();
-           
-            
         }
         /// <summary>
         /// Обработка нажатия кнопок управления
@@ -84,7 +85,40 @@ namespace WindowsFormsTank
             }
             Draw();
         }
+        private void buttonGunsStyle_Click(object sender, EventArgs e)
+        {
+            if (sender == button_GunsFirstStyle)
+            {
+                button_GunsSecondStyle.Enabled = false;
+                button_GunsThirdStyle.Enabled = false;
+            }
+            else if (sender == button_GunsSecondStyle)
+            {
+                button_GunsFirstStyle.Enabled = false;
+                button_GunsThirdStyle.Enabled = false;
+            }
+            else
+            {
+                button_GunsSecondStyle.Enabled = false;
+                button_GunsFirstStyle.Enabled = false;
+            }
+        }
 
+        private int FormaOrudiya()
+        {
+            if (button_GunsFirstStyle.Enabled == true)
+            {
+                return 0;
+            }
+            else if (button_GunsSecondStyle.Enabled == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
 
+        }
     }
 }

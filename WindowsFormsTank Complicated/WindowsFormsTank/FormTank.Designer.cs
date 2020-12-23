@@ -36,6 +36,9 @@
             this.buttonRight = new System.Windows.Forms.Button();
             this.comboBoxNumberDopGun = new System.Windows.Forms.ComboBox();
             this.buttonCreateTank = new System.Windows.Forms.Button();
+            this.button_GunsFirstStyle = new System.Windows.Forms.Button();
+            this.button_GunsSecondStyle = new System.Windows.Forms.Button();
+            this.button_GunsThirdStyle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTank)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,11 +132,44 @@
             this.buttonCreateTank.UseVisualStyleBackColor = true;
             this.buttonCreateTank.Click += new System.EventHandler(this.buttonCreateTank_Click);
             // 
+            // button_GunsFirstStyle
+            // 
+            this.button_GunsFirstStyle.Location = new System.Drawing.Point(590, 2);
+            this.button_GunsFirstStyle.Name = "button_GunsFirstStyle";
+            this.button_GunsFirstStyle.Size = new System.Drawing.Size(94, 42);
+            this.button_GunsFirstStyle.TabIndex = 8;
+            this.button_GunsFirstStyle.Text = "Стиль 1";
+            this.button_GunsFirstStyle.UseVisualStyleBackColor = true;
+            this.button_GunsFirstStyle.Click += new System.EventHandler(this.buttonGunsStyle_Click);
+            // 
+            // button_GunsSecondStyle
+            // 
+            this.button_GunsSecondStyle.Location = new System.Drawing.Point(713, 2);
+            this.button_GunsSecondStyle.Name = "button_GunsSecondStyle";
+            this.button_GunsSecondStyle.Size = new System.Drawing.Size(92, 42);
+            this.button_GunsSecondStyle.TabIndex = 9;
+            this.button_GunsSecondStyle.Text = "Стиль 2";
+            this.button_GunsSecondStyle.UseVisualStyleBackColor = true;
+            this.button_GunsSecondStyle.Click += new System.EventHandler(this.buttonGunsStyle_Click);
+            // 
+            // button_GunsThirdStyle
+            // 
+            this.button_GunsThirdStyle.Location = new System.Drawing.Point(834, 2);
+            this.button_GunsThirdStyle.Name = "button_GunsThirdStyle";
+            this.button_GunsThirdStyle.Size = new System.Drawing.Size(84, 42);
+            this.button_GunsThirdStyle.TabIndex = 10;
+            this.button_GunsThirdStyle.Text = "Стиль 3";
+            this.button_GunsThirdStyle.UseVisualStyleBackColor = true;
+            this.button_GunsThirdStyle.Click += new System.EventHandler(this.buttonGunsStyle_Click);
+            // 
             // FormTank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1696, 679);
+            this.Controls.Add(this.button_GunsThirdStyle);
+            this.Controls.Add(this.button_GunsSecondStyle);
+            this.Controls.Add(this.button_GunsFirstStyle);
             this.Controls.Add(this.buttonCreateTank);
             this.Controls.Add(this.comboBoxNumberDopGun);
             this.Controls.Add(this.buttonUp);
@@ -160,6 +196,9 @@
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.ComboBox comboBoxNumberDopGun;
         private System.Windows.Forms.Button buttonCreateTank;
+        private System.Windows.Forms.Button button_GunsFirstStyle;
+        private System.Windows.Forms.Button button_GunsSecondStyle;
+        private System.Windows.Forms.Button button_GunsThirdStyle;
     }
 }
 

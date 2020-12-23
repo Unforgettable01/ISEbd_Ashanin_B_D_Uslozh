@@ -49,6 +49,9 @@
     <Compile Include="ArmoredVehicle.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="DopGuns.cs" />
+    <Compile Include="GunsFirstStyle.cs" />
+    <Compile Include="GunsSecondStyle.cs" />
+    <Compile Include="GunsThirdStyle.cs" />
     <Compile Include="IDopGun.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Perechislenie.cs" />
