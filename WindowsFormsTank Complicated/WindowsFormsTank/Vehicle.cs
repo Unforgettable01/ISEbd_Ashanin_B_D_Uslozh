@@ -32,11 +32,13 @@ namespace WindowsFormsTank
         /// Основной цвет кузова
         /// </summary>
         public Color MainColor { protected set; get; }
+
+        public int helpValue = 20;// переменная которая не дает уйти дополнительной форме орудия за левый край окна
         public void SetPosition(int x, int y, int width, int height)
         {
             _pictureHeight = height;
             _pictureWidth = width;
-            _startPosX = x;
+            _startPosX = x+ helpValue;
             _startPosY = y;
         }
         public abstract void DrawTransport(Graphics g);
