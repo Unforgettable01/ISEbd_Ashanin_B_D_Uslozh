@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="ArmoredVehicle.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="DopGuns.cs" />
     <Compile Include="GunsFirstStyle.cs" />
     <Compile Include="GunsSecondStyle.cs" />
     <Compile Include="GunsThirdStyle.cs" />
