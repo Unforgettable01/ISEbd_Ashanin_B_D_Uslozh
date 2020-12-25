@@ -29,6 +29,8 @@ namespace WindowsFormsTank
 
         public bool BigGun { private set; get; }
 
+        // DopGuns Guns = new DopGuns();
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         public int Gun { private set; get; }
 
@@ -103,8 +105,6 @@ namespace WindowsFormsTank
                 g.FillRectangle(shield, _startPosX, _startPosY + 40, 75, 10);// верхний  щит, левая часть пред орудием
                 g.FillRectangle(shield, _startPosX + 165, _startPosY + 40, 105, 10);// верхний  щит, правая часть после орудия
             }
-
-
             if (DopWheel)
             {
                 g.DrawEllipse(pen, _startPosX, _startPosY + 140, 30, 30); // самое левое колесо №1
