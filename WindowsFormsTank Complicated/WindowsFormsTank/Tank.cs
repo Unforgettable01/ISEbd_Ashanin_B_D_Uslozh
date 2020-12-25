@@ -29,8 +29,7 @@ namespace WindowsFormsTank
 
         public bool BigGun { private set; get; }
 
-        // DopGuns Guns = new DopGuns();
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         /// <summary>
         public int Gun { private set; get; }
 
@@ -53,7 +52,7 @@ namespace WindowsFormsTank
             LeftShield = leftShield;
             RightShield = rightShield;
             DopWheel = dopWheel;
-            //Guns.SetNumberDopGun = numberDopGun;
+
 
             if (gunsForm == 0)
             {
